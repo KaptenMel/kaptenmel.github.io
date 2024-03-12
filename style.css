@@ -1,0 +1,80 @@
+/* Existing styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    .social-link {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+        /* Initial state shadow for smooth transition */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        .social-link {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for a 3D effect */
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px); /* Moves the button up to "float" */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
+        }
+        
+    }
+    
+    .social-link:hover {
+        transform: translateY(-5px); /* Moves the button up slightly */
+        box-shadow: 0 10px 15px rgba(0,0,0,0.3); /* Adds a shadow to create the floating effect */
+        opacity: 0.8;
+    }
+    
+    }
+
+/* New styles for specific social media buttons */
+.twitter {
+    background-color: #1DA1F2; /* Twitter's brand color */
+}
+
+.youtube {
+    background-color: #FF0000; /* YouTube's brand color */
+}
+
+.tiktok {
+    background-color: #000000; /* TikTok's brand color, primarily black */
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
