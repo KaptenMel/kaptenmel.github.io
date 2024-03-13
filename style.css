@@ -1,17 +1,28 @@
-/* Existing styles */
-body, html {
+/* Base styles */
+html {
+    height: 100%;
+}
+
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(to right, #74ebd5, #ACB6E5);
+    color: #ffffff;
+    /* Add padding-top to push the content a little bit down */
+    padding-top: 5vh; /* Adjust the value as needed */
 }
 
 .container {
+    width: 100%;
     max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    flex-grow: 1; /* Ensures the container can grow */
 }
 
 .social-links {
@@ -19,62 +30,47 @@ body, html {
     justify-content: center;
     gap: 20px;
     padding: 20px 0;
+    flex-wrap: wrap;
 }
 
+/* Styles for rounded social links */
+/* Styles for social links with brand colors */
 .social-link {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ffffff;
+    padding: 0.5rem 1rem;
+    color: #ffffff; /* White text to stand out on colored backgrounds */
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    .social-link {
-        display: inline-block;
-        padding: 10px 20px;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-        /* Initial state shadow for smooth transition */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        .social-link {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for a 3D effect */
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px); /* Moves the button up to "float" */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
-        }
-        
-    }
-    
-    .social-link:hover {
-        transform: translateY(-5px); /* Moves the button up slightly */
-        box-shadow: 0 10px 15px rgba(0,0,0,0.3); /* Adds a shadow to create the floating effect */
-        opacity: 0.8;
-    }
-    
-    }
-
-/* New styles for specific social media buttons */
-.twitter {
-    background-color: #1DA1F2; /* Twitter's brand color */
+    border-radius: 50px; /* Fully rounded edges */
+    transition: transform 0.3s ease;
 }
 
-.youtube {
-    background-color: #FF0000; /* YouTube's brand color */
+/* Twitter button with Twitter's brand blue */
+.social-link.twitter {
+    background-color: #1DA1F2;
 }
 
-.tiktok {
-    background-color: #000000; /* TikTok's brand color, primarily black */
+/* YouTube button with YouTube's brand red */
+.social-link.youtube {
+    background-color: #FF0000;
+}
+
+/* TikTok button with a neutral grey */
+.social-link.tiktok {
+    background-color: #313131;
+}
+
+/* Patreon button with Patreon's brand orange */
+.social-link.patreon {
+    background-color: #FF424D;
 }
 
 .social-link:hover {
-    opacity: 0.8;
+    transform: translateY(-2px);
+    opacity: 0.8; /* Slight transparency effect on hover */
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+    }
 }
