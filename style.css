@@ -53,11 +53,6 @@ body {
     background-color: #FF0000;
 }
 
-/* TikTok button with a neutral grey */
-.social-link.tiktok {
-    background-color: #313131;
-}
-
 /* Patreon button with Patreon's brand orange */
 .social-link.patreon {
     background-color: #FF424D;
