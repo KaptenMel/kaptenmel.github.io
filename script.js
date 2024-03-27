@@ -2,21 +2,13 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start' // Scroll to the top of the target element
         });
     });
 });
-
-// Dynamic Content Loader
-function loadContent(url, containerId) {
-    fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById(containerId).innerHTML = html;
-        })
-        .catch(error => console.error('Error loading the content:', error));
-}
 
 // Responsive Mobile Menu Toggle
 function toggleMobileMenu(menuId) {

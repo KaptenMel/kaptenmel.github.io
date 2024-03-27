@@ -6,7 +6,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif; /* Changed font to Rubik */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +25,18 @@ body {
     flex-grow: 1; /* Ensures the container can grow */
 }
 
+.title {
+    font-size: 3rem; /* Increased font size for title */
+    margin-bottom: 20px; /* Added some margin below the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
+}
+
+.description {
+    font-size: 1.2rem; /* Increased font size for description */
+    margin-bottom: 30px; /* Added some margin below the description */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -34,13 +46,14 @@ body {
 }
 
 /* Styles for rounded social links */
-/* Styles for social links with brand colors */
 .social-link {
     padding: 0.5rem 1rem;
     color: #ffffff; /* White text to stand out on colored backgrounds */
     text-decoration: none;
     border-radius: 50px; /* Fully rounded edges */
     transition: transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow to buttons */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
 }
 
 /* Twitter button with Twitter's brand blue */
@@ -58,14 +71,21 @@ body {
     background-color: #FF424D;
 }
 
-.social-link:hover {
-    transform: translateY(-2px);
-    opacity: 0.8; /* Slight transparency effect on hover */
+/* Additional buttons */
+.social-link.game {
+    background-color: #FFD700; /* Gold color for game button */
 }
 
-/* Adjustments for mobile view */
-@media (max-width: 768px) {
-    .social-links {
-        flex-direction: column;
-    }
+.social-link.discord {
+    background-color: #7289DA; /* Discord's brand color */
+}
+
+.footer {
+    background-color: #000000; /* Black background for footer */
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer-text {
+    color: #ffffff;
 }
