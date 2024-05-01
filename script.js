@@ -37,3 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggleBtn.addEventListener('click', toggleTheme);
     }
 });
+
+// Function to create a social link element
+function createSocialLink(linkData) {
+    const link = document.createElement('a');
+    link.href = linkData.url;
+    link.target = "_blank";
+    link.classList.add('social-link');
+    link.classList.add(linkData.name.toLowerCase()); // Add class for styling
+    link.style.backgroundColor = linkData.bgColor;
+    link.textContent = linkData.name;
+    return link;
+}
+
+// Function to dynamically create and append social links
+function createSocialLinks() {
+    const socialLinksContainer = document.querySelector('.social-links');
+    const existingLinks = socialLinksContainer.querySelectorAll('.social-link');
+    
+    socialMediaLinks.forEach(linkData => {
+        // Check if a button with the same URL already exists
+        const exists = Array.from(existingLinks).some(link => link.href === linkData.url);
+        if (!exists) {
+            const link = createSocialLink(linkData);
+            socialLinksContainer.appendChild(link);
+        }
+    });
+}
+
+// Call the function to create and append social links
+createSocialLinks();

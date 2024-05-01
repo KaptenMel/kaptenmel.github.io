@@ -6,43 +6,42 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif; /* Changed font to Rubik */
+    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    background-image: linear-gradient(to right, #74ebd5, #ACB6E5);
-    color: #ffffff;
-    /* Add padding-top to push the content a little bit down */
-    padding-top: 5vh; /* Adjust the value as needed */
+    background-image: linear-gradient(to bottom right, #380158, #000000); /* Purple and black linear background gradient */
+    color: #ffffff; /* White text for contrast */
+    padding-top: 5vh;
 }
 
 .container {
     width: 100%;
     max-width: 960px;
-    flex-grow: 1; /* Ensures the container can grow */
+    flex-grow: 1;
 }
 
 .title {
-    font-size: 3rem; /* Increased font size for title */
-    margin-bottom: 20px; /* Added some margin below the title */
+    font-size: 3rem;
+    margin-bottom: 20px;
     text-shadow: 
         -2px -2px 0 rgba(0, 0, 0, 0.8), 
         2px -2px 0 rgba(0, 0, 0, 0.8), 
         -2px 2px 0 rgba(0, 0, 0, 0.8), 
-        2px 2px 0 rgba(0, 0, 0, 0.8); /* Added smoother cartoonish black outline */
+        2px 2px 0 rgba(0, 0, 0, 0.8);
 }
 
 .description {
-    font-size: 1.2rem; /* Increased font size for description */
-    margin-bottom: 30px; /* Added some margin below the description */
+    font-size: 1.2rem;
+    margin-bottom: 30px;
     text-shadow: 
         -1px -1px 0 rgba(0, 0, 0, 0.8), 
         1px -1px 0 rgba(0, 0, 0, 0.8), 
         -1px 1px 0 rgba(0, 0, 0, 0.8), 
-        1px 1px 0 rgba(0, 0, 0, 0.8); /* Added smoother cartoonish black outline */
+        1px 1px 0 rgba(0, 0, 0, 0.8);
 }
 
 .social-links {
@@ -56,26 +55,26 @@ body {
 /* Styles for rounded social links */
 .social-link {
     padding: 0.5rem 1rem;
-    color: #ffffff; /* White text to stand out on colored backgrounds */
+    color: #ffffff; /* White text for contrast */
     text-decoration: none;
-    border-radius: 50px; /* Fully rounded edges */
+    border-radius: 50px;
     transition: transform 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow to buttons */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Twitter button with Twitter's brand blue */
 .social-link.twitter {
-    background-color: #1DA1F2;
+    background-color: #1DA1F2; /* Twitter blue */
 }
 
 /* YouTube button with YouTube's brand red */
 .social-link.youtube {
-    background-color: #FF0000;
+    background-color: #FF0000; /* YouTube red */
 }
 
 /* Patreon button with Patreon's brand orange */
 .social-link.patreon {
-    background-color: #FF424D;
+    background-color: #FF424D; /* Patreon orange */
 }
 
 /* Additional buttons */
@@ -88,11 +87,27 @@ body {
 }
 
 .footer {
-    background-color: #000000; /* Black background for footer */
+    background-image: linear-gradient(to right, #000000, #1a1a1a); /* Black gradient for footer */
     width: 100%;
     padding: 20px 0;
 }
 
 .footer-text {
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Add styles for small button */
+.small-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7289DA; /* Discord's brand color */
     color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.small-button:hover {
+    background-color: #546e99; /* Darker shade of Discord's brand color */
 }
