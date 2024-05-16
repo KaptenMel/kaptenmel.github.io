@@ -38,32 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Function to create a social link element
-function createSocialLink(linkData) {
-    const link = document.createElement('a');
-    link.href = linkData.url;
-    link.target = "_blank";
-    link.classList.add('social-link');
-    link.classList.add(linkData.name.toLowerCase()); // Add class for styling
-    link.style.backgroundColor = linkData.bgColor;
-    link.textContent = linkData.name;
-    return link;
-}
-
-// Function to dynamically create and append social links
-function createSocialLinks() {
-    const socialLinksContainer = document.querySelector('.social-links');
-    const existingLinks = socialLinksContainer.querySelectorAll('.social-link');
-    
-    socialMediaLinks.forEach(linkData => {
-        // Check if a button with the same URL already exists
-        const exists = Array.from(existingLinks).some(link => link.href === linkData.url);
-        if (!exists) {
-            const link = createSocialLink(linkData);
-            socialLinksContainer.appendChild(link);
-        }
+// Dynamic Button Effects
+document.querySelectorAll('.social-link').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-2px)';
+        button.style.boxShadow = '0px 8px 12px rgba(0, 0, 0, 0.2)';
     });
-}
-
-// Call the function to create and append social links
-createSocialLinks();
+    
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0)';
+        button.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    });
+});
