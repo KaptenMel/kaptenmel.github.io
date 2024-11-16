@@ -62,9 +62,9 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Twitter button with Twitter's brand blue */
-.social-link.twitter {
-    background-color: #1DA1F2; /* Twitter blue */
+/* Twitter button with Bluesky's brand blue */
+.social-link.bluesky {
+    background-color: #1DA1F2; /* Bluesky blue */
 }
 
 /* YouTube button with YouTube's brand red */
