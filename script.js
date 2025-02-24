@@ -45,7 +45,7 @@ if (savedTheme === 'light') {
 // Check if the user has already accepted or declined cookies
 const cookiesAccepted = localStorage.getItem('cookiesAccepted');
 
-if (cookiesAccepted === null) {
+if (cookiesAccepted === null || cookiesAccepted === undefined) {
     // Show the cookie banner if no preference is set
     cookieBanner.style.display = 'flex';
 } else {
