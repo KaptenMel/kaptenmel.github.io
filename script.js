@@ -48,6 +48,9 @@ const cookiesAccepted = localStorage.getItem('cookiesAccepted');
 if (cookiesAccepted === null) {
     // Show the cookie banner if no preference is set
     cookieBanner.style.display = 'flex';
+} else {
+    // Hide the cookie banner if the user has already made a choice
+    cookieBanner.style.display = 'none';
 }
 
 // Handle "Accept" button click
