@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+body.light-mode {
+    background-color: #FFFFFF; /* White background */
+    color: #000000; /* Black text */
+}
+
+/* Loading Animation */
+.loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+}
+
+.loading-animation .spinner {
+    border: 4px solid #FFFFFF; /* White spinner */
+    border-top: 4px solid #1DA1F2; /* Twitter blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Container */
+.container {
+    text-align: center;
+    background-color: #000000; /* Black background */
+    padding: 40px;
+    border-radius: 0; /* No rounded corners for BSOD look */
+    max-width: 500px;
+    width: 100%;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease forwards;
+}
+
+body.light-mode .container {
+    background-color: #FFFFFF; /* White background */
+    color: #000000; /* Black text */
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #FFFFFF; /* White icon */
+    transition: color 0.3s ease;
+}
+
+body.light-mode .theme-toggle {
+    color: #000000; /* Black icon */
+}
+
+.theme-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(20deg); /* Fun hover effect */
+}
+
+/* Profile Section */
+header .profile {
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #3A5A40; /* Dark green */
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: rotate(10deg) scale(1.1); /* Fun hover effect */
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #FFFFFF; /* White text */
+}
+
+body.light-mode header h1 {
+    color: #000000; /* Black text */
+}
+
+header p {
+    font-size: 1rem;
+    color: #CCCCCC; /* Light gray for secondary text */
+    margin-bottom: 30px;
+}
+
+body.light-mode header p {
+    color: #666666; /* Dark gray for secondary text */
+}
+
+/* Bio Section */
+.bio {
+    font-size: 0.95rem;
+    color: #CCCCCC; /* Light gray for secondary text */
+    margin-bottom: 30px;
+}
+
+body.light-mode .bio {
+    color: #666666; /* Dark gray for secondary text */
+}
+
+/* Links Section */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-button {
+    text-decoration: none;
+    color: #FFFFFF; /* White */
+    padding: 14px 24px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
+
+.link-button:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2); /* Subtle white shadow */
+}
+
+.link-button:active {
+    transform: translateY(0); /* Reset on click */
+}
+
+.link-button i {
+    font-size: 1.2rem;
+}
+
+/* Unique Button Colors */
+.link-button.twitter {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+.link-button.twitter:hover {
+    background-color: #1991DB; /* Darker Twitter blue */
+}
+
+.link-button.instagram {
+    background: linear-gradient(45deg, #833AB4, #E1306C, #FCAF45); /* Instagram gradient */
+}
+
+.link-button.instagram:hover {
+    background: linear-gradient(45deg, #772AA3, #D1255C, #F39C3D); /* Darker Instagram gradient */
+}
+
+.link-button.github {
+    background-color: #333; /* GitHub black */
+}
+
+.link-button.github:hover {
+    background-color: #222; /* Darker GitHub black */
+}
+
+.link-button.youtube {
+    background-color: #FF0000; /* YouTube red */
+}
+
+.link-button.youtube:hover {
+    background-color: #E60000; /* Darker YouTube red */
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #CCCCCC; /* Light gray for secondary text */
+}
+
+body.light-mode footer {
+    color: #666666; /* Dark gray for secondary text */
+}
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1A1A1A, #2C2C2C); /* Smoother black to gray gradient */
+    color: #FFFFFF; /* White */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 1000;
+    max-width: 90%;
+    width: 450px;
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Match the site's font */
+    backdrop-filter: blur(10px); /* Adds a modern blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for depth */
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #DAD7CD; /* Light beige for text */
+    line-height: 1.5;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cookie-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-button.accept {
+    background-color: #4A4A4A; /* Dark gray */
+    color: #FFFFFF; /* White */
+}
+
+.cookie-button.accept:hover {
+    background-color: #333333; /* Slightly darker gray */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-button.decline {
+    background-color: #333333; /* Dark gray */
+    color: #FFFFFF; /* White */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.cookie-button.decline:hover {
+    background-color: #2C2C2C; /* Slightly darker gray */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}

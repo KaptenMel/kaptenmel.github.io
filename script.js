@@ -1,52 +1,63 @@
-// Smooth Scroll Function
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start' // Scroll to the top of the target element
-        });
-    });
+// JavaScript for loading screen, dark/light mode toggle, and cookie consent banner
+const loadingAnimation = document.getElementById('loading-animation');
+const themeToggle = document.getElementById('theme-toggle');
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptCookiesButton = document.getElementById('accept-cookies');
+const declineCookiesButton = document.getElementById('decline-cookies');
+
+// Hide the loading screen when the page has fully loaded
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingAnimation.style.opacity = '0'; // Fade out the loading screen
+        setTimeout(() => {
+            loadingAnimation.style.display = 'none'; // Hide the loading screen after fading out
+        }, 500); // Wait for the fade-out transition to complete
+    }, 1000); // Simulate a 1-second loading delay
 });
 
-// Responsive Mobile Menu Toggle
-function toggleMobileMenu(menuId) {
-    const menu = document.getElementById(menuId);
-    menu.classList.toggle('is-active');
-}
-
-// Theme Switcher (Light/Dark Mode)
-function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark-theme');
-    const theme = body.classList.contains('dark-theme') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme); // Save the theme preference
-}
-
-// Apply the saved theme on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.add(savedTheme === 'dark' ? 'dark-theme' : 'light-theme');
-    }
-    
-    // Optionally, bind the theme toggle to a specific element
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
+// Dark/Light Mode Toggle
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLightMode = document.body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    updateThemeIcon(isLightMode);
 });
 
-// Dynamic Button Effects
-document.querySelectorAll('.social-link').forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        button.style.transform = 'translateY(-2px)';
-        button.style.boxShadow = '0px 8px 12px rgba(0, 0, 0, 0.2)';
-    });
-    
-    button.addEventListener('mouseleave', () => {
-        button.style.transform = 'translateY(0)';
-        button.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
-    });
+// Update the theme icon
+function updateThemeIcon(isLightMode) {
+    const icon = themeToggle.querySelector('i');
+    if (isLightMode) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+}
+
+// Load saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    updateThemeIcon(true);
+}
+
+// Check if the user has already accepted or declined cookies
+const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+if (cookiesAccepted === null) {
+    // Show the cookie banner if no preference is set
+    cookieBanner.style.display = 'flex';
+}
+
+// Handle "Accept" button click
+acceptCookiesButton.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieBanner.style.display = 'none';
+});
+
+// Handle "Decline" button click
+declineCookiesButton.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'false');
+    cookieBanner.style.display = 'none';
 });
