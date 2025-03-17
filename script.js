@@ -1,4 +1,4 @@
-// JavaScript for loading screen, dark/light mode toggle, and cookie consent banner
+// JavaScript for custom cursor, loading screen, dark/light mode toggle, and cookie consent banner
 const loadingAnimation = document.getElementById('loading-animation');
 const themeToggle = document.getElementById('theme-toggle');
 const cookieBanner = document.getElementById('cookie-banner');
@@ -63,4 +63,31 @@ acceptCookiesButton.addEventListener('click', () => {
 declineCookiesButton.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'false');
     cookieBanner.style.display = 'none';
+});
+
+// Custom Cursor Logic
+document.addEventListener('mousemove', (e) => {
+    // Move the custom cursor to the mouse position
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+});
+
+// Add hover effects for interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .link-button');
+interactiveElements.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+        customCursor.classList.add('hover');
+    });
+    element.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('hover');
+    });
+});
+
+// Add click animation for interactive elements
+document.addEventListener('mousedown', () => {
+    customCursor.classList.add('click');
+});
+
+document.addEventListener('mouseup', () => {
+    customCursor.classList.remove('click');
 });
