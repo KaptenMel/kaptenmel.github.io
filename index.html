@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaptenMel — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="floating-cats" aria-hidden="true" id="floatingCats"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="cat-face">=^.^=</span>
+      <span>KaptenMel</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="cat-btn" id="meowBtn" title="Click me!">meow?</button>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Available for work ✨</div>
+      <h1 class="hero-title">
+        Hey, I'm <span class="highlight">KaptenMel</span>
+        <span class="waving-cat">🐱</span>
+      </h1>
+      <p class="hero-sub">
+        Developer · Creator · Cat Enthusiast<br />
+        I build cool things and pet cats.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+      <div class="ascii-cat">
+        <pre>
+  /\_____/\
+ (  o   o  )
+ (  =^_^=  )
+  \  ---  /
+   )     (
+  (_)___(_)</pre>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>scroll down</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-tag">// about_me.cat</div>
+      <h2 class="section-title">Who am I?</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a developer who loves building things on the web — from
+            slick interfaces to robust backends. When I'm not writing code
+            I'm probably watching cat videos. Maybe both at the same time.
+          </p>
+          <p>
+            I care about clean code, good UX, and making the internet a
+            slightly more delightful place. Also cats. Definitely cats.
+          </p>
+          <div class="fun-facts">
+            <div class="fact"><span class="fact-icon">☕</span> Powered by coffee</div>
+            <div class="fact"><span class="fact-icon">🐈</span> Cat-approved code</div>
+            <div class="fact"><span class="fact-icon">🌙</span> Peak productivity: 2am</div>
+            <div class="fact"><span class="fact-icon">🎮</span> Side quest: video games</div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="card-cat">
+            <div class="pixel-cat" id="pixelCat">
+              <div class="pc-body"></div>
+              <div class="pc-head">
+                <div class="pc-ear left"></div>
+                <div class="pc-ear right"></div>
+                <div class="pc-face">
+                  <div class="pc-eye left"></div>
+                  <div class="pc-eye right"></div>
+                  <div class="pc-nose"></div>
+                  <div class="pc-mouth"></div>
+                  <div class="pc-whiskers">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc-tail"></div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat">
+              <span class="stat-num" data-target="42">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="3">0</span>
+              <span class="stat-label">Years exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="9">0</span>
+              <span class="stat-label">Cat lives</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-tag">// projects.fur</div>
+      <h2 class="section-title">Things I've built</h2>
+      <p class="section-sub">A selection of projects — some serious, some for fun, all made with love (and caffeine).</p>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-cat">🐱</span>
+            <span class="project-tag">Web App</span>
+          </div>
+          <h3>Project One</h3>
+          <p>A cool web application that does something impressive. Built with modern tech and a sprinkle of magic.</p>
+          <div class="project-tech">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link">Live →</a>
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card featured">
+          <div class="project-header">
+            <span class="project-cat">😸</span>
+            <span class="project-tag featured-tag">Featured</span>
+          </div>
+          <h3>Project Two</h3>
+          <p>The one I'm most proud of. Solved a real problem, shipped it, people actually use it. Pretty neat.</p>
+          <div class="project-tech">
+            <span>TypeScript</span><span>Python</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link">Live →</a>
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-cat">🙀</span>
+            <span class="project-tag">Tool</span>
+          </div>
+          <h3>Project Three</h3>
+          <p>A dev tool that makes life easier. Because I got tired of doing the same tedious thing over and over.</p>
+          <div class="project-tech">
+            <span>Go</span><span>CLI</span><span>Shell</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-cat">😺</span>
+            <span class="project-tag">Fun</span>
+          </div>
+          <h3>Cat Generator 3000</h3>
+          <p>Okay this one's just for fun. Generates random cat facts and ASCII art. It does what it says on the tin.</p>
+          <div class="project-tech">
+            <span>JavaScript</span><span>CSS</span><span>Cats</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link">Live →</a>
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-tag">// skills.meow</div>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>HTML/CSS</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>TypeScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>React</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>Node.js</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>PostgreSQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Docker</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cat Skills</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>Napping</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Knocking things off tables</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Ignoring people</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Being cute</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catfact-section">
+    <div class="container">
+      <div class="catfact-box">
+        <div class="catfact-icon">🐾</div>
+        <div>
+          <div class="catfact-label">Cat Fact of the Day</div>
+          <div class="catfact-text" id="catFact">Loading a purrfect fact...</div>
+        </div>
+        <button class="catfact-btn" id="newFactBtn">New fact</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-tag">// contact.purr</div>
+      <h2 class="section-title">Say hello!</h2>
+      <p class="section-sub">I'm always happy to chat about projects, ideas, or cats.</p>
+      <div class="contact-grid">
+        <div class="contact-links">
+          <a href="mailto:hello@example.com" class="contact-card">
+            <span class="cc-icon">✉️</span>
+            <span class="cc-label">Email</span>
+            <span class="cc-value">hello@example.com</span>
+          </a>
+          <a href="https://github.com/kaptenmel" class="contact-card" target="_blank" rel="noopener">
+            <span class="cc-icon">🐙</span>
+            <span class="cc-label">GitHub</span>
+            <span class="cc-value">kaptenmel</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="cc-icon">🔗</span>
+            <span class="cc-label">LinkedIn</span>
+            <span class="cc-value">Find me here</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="cc-icon">🐦</span>
+            <span class="cc-label">Twitter / X</span>
+            <span class="cc-value">@kaptenmel</span>
+          </a>
+        </div>
+        <div class="contact-art">
+          <pre class="big-ascii">
+  |\      _,,,---,,_
+  /,`.-'`'    -.  ;-;;,_
+ |,4-  ) )-,_..;\ (  `'-'
+'---''(_/--'  `-'\_)</pre>
+          <p class="contact-art-caption">Waiting for your message...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-logo">=^.^= KaptenMel</span>
+        <span class="footer-copy">Built with ❤️ and 🐱 · 2026</span>
+        <a href="#hero" class="footer-back">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="meow-popup" id="meowPopup"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
